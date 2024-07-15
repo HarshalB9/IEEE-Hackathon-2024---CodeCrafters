@@ -32,7 +32,7 @@ export default async function uploadPhoto(req ,res){
             description:description,
             photo_url:imageUrl,
             title,
-            saved : [],
+            saved : user.saved,
             authorId : parseInt(user_id)
         }
        });
