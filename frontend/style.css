@@ -1,0 +1,169 @@
+*{
+    margin-top: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+}
+.nav-bar{
+    /* border: 2px solid black; */
+     
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    /* z-index: 1000;  */
+    /* margin-top: 0.4rem; */
+    display:flex;
+    height: 4.68rem;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    justify-content: space-between;
+    z-index: 1;
+    
+}
+.nav-ops{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    right: 0.625rem;
+    width: 25rem;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: center; 
+    overflow-y: auto;
+    
+    /* margin-right:150px; */
+    /* padding-top: 40PX; */
+}
+.heading-on-homepage{
+    /* border: 2px solid black; */
+    margin-top: 4.6875rem;
+    height: 5.3125rem;
+    width: 100wh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    align-items: center;
+    h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
+.catagory-container{
+    /* margin-top: 75px; */
+    /* border: 2px solid black; */
+    /* height:calc(100vh - 155px); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    gap: 0.625rem;
+    padding: 0.625;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left:2.5rem;
+    padding-right: 2.5rem;
+
+}
+.catagory{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/ART\ Catagory.jpg");
+    background-size: cover;
+    /* border: 2px solid black; */
+    height: 10rem;
+    width: 18.75rem;
+    border-radius: 1rem;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    overflow: hidden;
+    color: white;
+    text-align: center;
+
+}
+.catagory h3 {
+    font-weight: 600;
+    color: white;
+    font-size: 2.5rem;
+    position: relative;
+    /* z-index: 1;  */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0); /* Initial transparency */
+    transition: background-color 0.3s ease;
+    
+}
+
+.catagory:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Black with opacity on hover */
+}
+
+.save-button {
+    display: none; /* Initially hide the button */
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+}
+
+.catagory:hover .save-button {
+    display: block; /* Show the button on hover */
+}
+.h_message{
+    margin-top: 1.875;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.homepage-photo-gallery {
+    /* height: calc(100vh - 75px); */
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+}
+.homepage-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    gap: 1.25rem;
+    padding: 0.625rem;
+    width: 100%;
+}
+.photo-of-photo-gallery {
+    width: 100%;
+    /* border: 2px solid black; */
+    height: 25rem;
+    border-radius: 1rem;
+    display: block;
+    background-color: rgba(0, 0, 0, 0); /* Initial transparency */
+    transition: background-color 0.3s ease;
+}
+
+
+
+.photo-of-photo-gallery img{
+    width: 100%;
+    /* border: 2px solid black; */
+    height: 25rem;
+    border-radius: 1rem;
+    display: block;
+}
