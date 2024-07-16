@@ -9,6 +9,7 @@ export default async function tokenVerify(req, res,next){
     try {
         const result = jwt.verify(token , SECRET);
         req.user_id = result;
+        console.log(result);
         next();
     } catch (error) {
         return res.json({message : "incorrect token"})

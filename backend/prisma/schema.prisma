@@ -22,6 +22,7 @@ model User{
   otp           String?
   otpExpiry     DateTime?
   profileImgae  String?
+  saved         Int[]
   photo         Photo[]
 }
 model Photo{
@@ -33,5 +34,4 @@ model Photo{
   description String
   category    String
   likes       Int?      @default(0)
-  saved       Int[]
 }
