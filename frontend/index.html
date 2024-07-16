@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="./style.css" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-</head>
-<body>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="nav-bar">
-        <div class="nav-logo">
-            <img width="200px" src="final-logo.png" alt="" />
-        </div>
-        <div class="nav-ops">
-            <button type="button" class="btn btn-warning">upload Image</button>
-            <button type="button" class="btn btn-warning">login</button>
-            <button type="button" class="btn btn-warning">sign Up</button>
-        </div>
-       
+      <div class="nav-logo">
+        <img width="200px" src="./images/final-logo.png" alt="" />
+      </div>
+      <div class="nav-ops">
+        <button type="button" class="btn btn-warning">upload Image</button>
+        <button type="button" class="btn btn-warning">login</button>
+        <button type="button" class="btn btn-warning">sign Up</button>
+      </div>
     </div>
-    <div class="heading-on-homepage"><h1>Welcome to Our Photo Gallery
-    </h1></div>
+    <div class="heading-on-homepage"><h1>Welcome to Our Photo Gallery</h1></div>
     <div class="catagory-container">
-      
-        <div class="catagory"><h3>Animal</h3> <div class="overlay"> <button type="button" class="save-button">upload Image</button></div></div>
-        <div class="catagory"><h3>Travel</h3> <div class="overlay"></div></div>
-        <div class="catagory"><h3>Travel</h3> <div class="overlay"></div></div>
-        <div class="catagory"> <h3>Travel</h3><div class="overlay"></div></div>
-        <div class="catagory"><h3>Travel</h3> <div class="overlay"></div></div>
-        <div class="catagory"><h3>Travel</h3> <div class="overlay"></div></div>
-        <div class="catagory"> <h3>Travel</h3><div class="overlay"></div></div>
-        <div class="catagory"> <h3>Travel</h3><div class="overlay"></div></div>
-      
-        
-        
+      <div class="catagory">
+        <h3>Animal</h3>
+        <div class="overlay">
+          <button type="button" class="save-button">upload Image</button>
+        </div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
+      <div class="catagory">
+        <h3>Travel</h3>
+        <div class="overlay"></div>
+      </div>
     </div>
 
     <div class="h_message"><h4>Explore our Gallery</h4></div>
     <div class="homepage-photo-gallery">
-        <div class="homepage-photo-grid" id="homepage-photo-grid">
-            
-
+      <div class="homepage-photo-grid" id="homepage-photo-grid">
+        <div class="photo-of-photo-gallery">
+          <div class="for-overlay-effect">
+            <img src="./images/ART Catagory.jpg" alt="" />
+            <button type="button" class="save-button">save</button>
+            <div class="photo-overlay"></div>
+          </div>
         </div>
+      </div>
     </div>
-     <script type="module">
+    <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
       import {
@@ -57,62 +84,59 @@
       } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDfC63slCtfaXMCWiNzWNcb7NK2bkNbKLQ",
-  authDomain: "eduswap2-1cffe.firebaseapp.com",
-  databaseURL: "https://eduswap2-1cffe-default-rtdb.firebaseio.com",
-  projectId: "eduswap2-1cffe",
-  storageBucket: "eduswap2-1cffe.appspot.com",
-  messagingSenderId: "167309276328",
-  appId: "1:167309276328:web:fa503b10097795bfaebe9d",
-  measurementId: "G-DYHFVGGFHS"
-};
+      const firebaseConfig = {
+        apiKey: "AIzaSyDfC63slCtfaXMCWiNzWNcb7NK2bkNbKLQ",
+        authDomain: "eduswap2-1cffe.firebaseapp.com",
+        databaseURL: "https://eduswap2-1cffe-default-rtdb.firebaseio.com",
+        projectId: "eduswap2-1cffe",
+        storageBucket: "eduswap2-1cffe.appspot.com",
+        messagingSenderId: "167309276328",
+        appId: "1:167309276328:web:fa503b10097795bfaebe9d",
+        measurementId: "G-DYHFVGGFHS",
+      };
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
       const db = getFirestore();
 
+      // --------------Get all Data----------------------//
 
+      async function GetAllDataOnce() {
+        const querySnapshot = await getDocs(collection(db, "users"));
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const h_photobox = document.createElement("div");
+          h_photobox.className = "photo-of-photo-gallery";
 
-      
+          const h_for_overlay_effect = document.createElement("div");
+          h_for_overlay_effect.className = "for-overlay-effect";
 
-     // --------------Get all Data----------------------//
+          const h_photo_overlay = document.createElement("div");
+          h_photo_overlay.className = "photo-overlay";
 
-async function GetAllDataOnce() {
-  const querySnapshot = await getDocs(collection(db, "users"));
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-    const h_photobox = document.createElement("div");
-    const overlay_photo_gallery = document.createElement("div");
-    h_photobox.className = "photo-of-photo-gallery";
-    
-    // Creating elements for title, price, and contact
-    // const title = document.createElement("h2");
-    // title.textContent = data.title;
-    
+          const photo_save_button = document.createElement("button");
+          photo_save_button.className = "save-button";
+          photo_save_button.textContent = "save";
 
+          // Creating image element
+          const image = document.createElement("img");
+          image.src = data.imageURL; // Setting the image source to the URL from Firestore
+          image.alt = "Product Image";
 
-    // Creating image element
-    const image = document.createElement("img");
-    image.src = data.imageURL;    // Setting the image source to the URL from Firestore
-    image.alt = "Product Image";
+          h_for_overlay_effect.appendChild(image);
+          h_for_overlay_effect.appendChild(photo_save_button);
+          h_for_overlay_effect.appendChild(h_photo_overlay);
+          h_photobox.appendChild(h_for_overlay_effect);
 
-    // Appending elements to shopBox
-    h_photobox.appendChild(image);
-    // shopBox.appendChild(title);
-    // shopBox.appendChild(price);
-    
-    document.getElementById("homepage-photo-grid").appendChild(h_photobox);
-  });
-}
+          document
+            .getElementById("homepage-photo-grid")
+            .appendChild(h_photobox);
+        });
+      }
 
-// Call the function to get data and display images
-GetAllDataOnce();
-
-
-      
-
+      // Call the function to get data and display images
+      GetAllDataOnce();
     </script>
-</body>
+  </body>
 </html>
