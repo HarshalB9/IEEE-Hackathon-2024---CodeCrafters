@@ -50,6 +50,7 @@ export async function login(req ,res){
         } catch (error) 
         {
            console.log("error in verify")
+           console.log(error);
            return  res.json({Api_Response : 304 , message : "Error in login backend"})
            
         }

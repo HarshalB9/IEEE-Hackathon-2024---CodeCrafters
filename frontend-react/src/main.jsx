@@ -9,7 +9,9 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RecoilRoot>
-    <App />
+   < BrowserRouter>
+   <App/>
+   </BrowserRouter>
     </RecoilRoot>
   </React.StrictMode>,
 )

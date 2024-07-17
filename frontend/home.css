@@ -194,7 +194,6 @@
     height: 100%;
     border-radius: 1rem;
     display: block;
-<<<<<<< HEAD:frontend/style.css
     transition: opacity 0.3s ease; /* Smooth transition for the image */
 }
 
@@ -217,6 +216,4 @@
 
 .for-overlay-effect:hover .save-button {
     display: block; 
-=======
->>>>>>> origin/main:frontend/home.css
 }
