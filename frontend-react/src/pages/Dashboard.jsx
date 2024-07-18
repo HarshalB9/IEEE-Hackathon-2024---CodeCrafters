@@ -4,6 +4,8 @@ import Home from './Home';
 import Login from './Login';
 import Signup from './Signup';
 import Category from './Category';
+import Upload from './Upload';
+import Profile from './Profile';
 const Dashboard = () => {
   return (
     <div>
@@ -12,6 +14,8 @@ const Dashboard = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/category/:category" element={<Category />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   )

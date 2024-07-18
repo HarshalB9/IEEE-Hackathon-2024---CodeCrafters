@@ -10,6 +10,7 @@ const SECRET = process.env.SECRETS;
 
 export default async function saveAPhoto(req , res){
     try {
+        console.log("save a photo route hit");
         const user_id = parseInt(req.user_id);
         let photo_id_provided = req.headers.photo_id;
         if(!photo_id_provided)

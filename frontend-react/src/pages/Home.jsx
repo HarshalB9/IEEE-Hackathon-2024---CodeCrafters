@@ -3,9 +3,14 @@ import Navbar from '../components/Navbar'
 import "./Home.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Button from '../components/Button'
+import handleButtonOnClick from '../components/handleButtonOnClick'
+import { loggedInSelector } from '../store/user'
+import { useRecoilValue } from 'recoil'
 const Home = () => {
   const [photos, setPhotos] = useState([]);
   const [categories, setCategories] = useState([]);
+  const loggedIn = useRecoilValue(loggedInSelector);
   const navigate = useNavigate();
   useEffect(() => {
     async function getAllPhotos() {
@@ -25,7 +30,7 @@ const Home = () => {
     }
     getAllCategories();
   }, []);
-  
+
   return (
     <>
       <Navbar></Navbar>
@@ -33,10 +38,10 @@ const Home = () => {
         <h1>Welcome to Our Photo Gallery</h1>
       </div>
       <div className="catagory-container">
-        {categories ? categories.map((category,index)=>{
-          return(
-            <div className="catagory" onClick={()=>{
-              navigate("/category/"+category);
+        {categories ? categories.map((category, index) => {
+          return (
+            <div className="catagory" onClick={() => {
+              navigate("/category/" + category);
             }}>
               <h3>{category}</h3>
               <div className="overlay"></div>
@@ -52,7 +57,7 @@ const Home = () => {
               <div className='photo-of-photo-gallery'>
                 <div className='for-overlay-effect'>
                   <img src={photo.photo_url} alt="" />
-                  <button type='button' className='save-button'>save</button>
+                  <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))} >save</button>
                   <div className='photo-overlay'></div>
 
                 </div>

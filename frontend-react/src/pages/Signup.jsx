@@ -36,7 +36,7 @@ const Signup = () => {
       console.log("User signed up");
       setUser({ loggedIn: true, email: email, user_id : response.data.user_id,name: name , profileImgae:'' , saved:[] });
       localStorage.setItem("token" , response.data.token);
-      navigate("/")
+      window.location.href = "/"
     }
     else{
       alert("Incorrect data");

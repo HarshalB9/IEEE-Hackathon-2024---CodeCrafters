@@ -1,8 +1,13 @@
 import React from 'react'
-
-const Button = () => {
+import "./Button.css"
+const Button = ({photo}) => {
   return (
-    <div>Button</div>
+    <>
+      <div className='b_for-overlay-effect'>
+        <img src={photo} alt="" />
+          <button type='button' className='b_save-button'>save</button>
+      </div>
+    </>
   )
 }
 

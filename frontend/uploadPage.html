@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell on EduSwap</title>
+    <style>
+      body {
+        /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 2vw;
+        /* background-color: #f0f0f0; */
+      }
+      #form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        height: 70vh;
+        /* margin-top: 150px; */
+        background-color: #f0f0f0;        padding: 20px;
+        border-radius: 15px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+      }
+      #form2 {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        width: 40vw;
+        height: 70vh;
+        /* margin-top: 150px; */
+        background-color: fff;  
+        padding: 20px;
+        /* border-radius: 8px; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+      }
+      
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 100px;
+      }
+      img {
+        height: 60vh;
+        width: 20vw;
+        border: 2px solid gray;
+        border-radius: 0.8rem;
+      }
+
+      input[type="submit"] {
+        background-color: rgba(128, 128, 128, 0.577);
+        color: black;
+        border: none;
+        margin-top: 8vh;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+      input[type="submit"]:hover {
+        background-color: rgba(128, 128, 128, 0.8);
+
+      }
+
+      .imgbtns {
+        background-color: rgba(128, 128, 128, 0.577);
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .imgbtns:hover {
+        background-color: rgba(128, 128, 128, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post" id="form">
+      <!-- <h2>Enter product details</h2> -->
+      <!-- <label for="title">Title of the product:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="E.g. PPS TechKnowledge (First Year) 2022 edition"
+        required
+      /> -->
+      <!-- <label for="price">Price:</label>
+      <input type="number" id="price" name="price" min="0" required /> -->
+      <!-- <label for="description">Description of the product:</label>
+      <textarea id="description" name="description" required></textarea>
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" required /> -->
+      <label>Image name</label>
+      <input
+        type="text"
+        id="namebox"
+        placeholder="(Autofilled after selecting file)"
+      />
+      <label id="extlab"></label> <br /><br />
+      <img id="myimg" /> <label id="upprogress"></label> <br />
+      <br />
+
+      <button class="imgbtns" id="selbtn">Select Image</button>
+      <!-- <button class="imgbtns" id="upbtn">Upload Image</button>
+      <button class="imgbtns" id="downbtn">Download Image</button> -->
+      <br />
+      <br />
+
+      <!-- <h2>Enter login credentials</h2>
+      <label for="email">Email-ID</label>
+      <input type="text" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required /> -->
+
+     
+    </form>
+
+    <form action="" method="post" id="form2">
+        <label for="title">Title</label>
+        <input type="text" id="title" required >
+        <br>
+        <label for="description">Description</label>
+        <textarea name="description" id="descrition" required></textarea>
+        <br>
+        <label for="category">Category</label> <br>
+        <select name="category" id="category" required >
+            <option value="Nature">Nature</option>
+            <option value="Animals">Animals</option>
+            <option value="Cars">Cars</option>
+            <option value="Bikes">Bikes</option>
+            <option value="Sports">Sports</option>
+            <option value="Art">Art</option>
+            <option value="Design">Design</option>
+            <option value="Crafts">Crafts</option>
+            <option value="Food">Food</option>
+            <option value="Quotes">Quotes</option>
+            <option value="Tatoos">Tatoos</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Decor">Decor</option>
+        </select>
+
+        <input type="submit" id="submitbtn" value="Submit" />
+    </form>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    //   import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+// import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAAmtFu5kTBDySN7EFODMeJuAgtb__XqHU",
+  authDomain: "photo-gallery-cee36.firebaseapp.com",
+  projectId: "photo-gallery-cee36",
+  storageBucket: "photo-gallery-cee36.appspot.com",
+  messagingSenderId: "592896620255",
+  appId: "1:592896620255:web:cb76f32041aa150deb5b6a"
+};
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    //   const db = getFirestore(app);
+    //   const auth = getAuth(app);
+      const storage = getStorage(app);
+
+      import {
+        getStorage,
+        ref as sRef,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-storage.js";
+
+
+      document.getElementById('form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // let title = document.getElementById('title').value;
+        // let price = document.getElementById('price').value;
+        // let description = document.getElementById('description').value;
+        // let contact = document.getElementById('contact').value;
+       
+       // Upload the image to Firebase Storage
+    const imgURL = await uploadImage();
+    console.log(imgURL);
+
+        // try {
+        //     await addDoc(collection(db, "users"), {
+        //         // title:title,
+        //         // price:price,
+        //         // description:description,
+        //         // contact:contact,
+        //         // imageURL: imgURL //  new        Store the download URL of the image
+
+        //     });
+        //     alert('Product added successfully!');
+        // } catch (error) {
+        //     console.error("Error adding product: ", error);
+        // }
+    });
+      // Function to upload image to Firebase Storage and return download URL
+  async function uploadImage() {
+    const file = files[0];
+    const storageRef = sRef(storage, 'images/' + file.name);
+    await uploadBytesResumable(storageRef, file);
+    return getDownloadURL(storageRef);
+  }
+
+      // VAARIABLES AND REFERENCES
+
+      var files = [];
+      var reader = new FileReader();
+
+      var namebox = document.getElementById("namebox");
+      var extlab = document.getElementById("extlab");
+      var myimg = document.getElementById("myimg");
+      var proglab = document.getElementById("upprogress");
+      var Selbtn = document.getElementById("selbtn");
+      var Upbtn = document.getElementById("upbtn");
+      var Downbtn = document.getElementById("downbtn");
+
+      var input = document.createElement("input");
+      input.type = "file";
+
+      input.onchange = (e) => {
+        files = e.target.files;
+
+        var extension = GetFileExt(files[0]);
+        var name = GetFileName(files[0]);
+
+        namebox.value = name;
+        extlab.innerHTML = extension;
+
+        reader.readAsDataURL(files[0]);
+      };
+
+      reader.onload = function () {
+        myimg.src = reader.result;
+      };
+
+      //Image Selection
+
+      Selbtn.onclick = function () {
+        input.click();
+      };
+
+      function GetFileExt(file) {
+        var temp = file.name.split(".");
+        var ext = temp.slice((temp.length - 1), temp.length);
+        return "." + ext[0];
+      }
+
+      function GetFileName(file) {
+        var temp = file.name.split(".");
+        var fname = temp.slice(0, -1).join(".");
+        return fname;
+      }
+
+      // UPLOAD PROCESS
+
+      async function UploadProcess() {
+        var ImgToUpload = files[0];
+
+        var ImgName = namebox.value + extlab.innerHTML;
+
+        const metaData = {
+          contentType: ImgToUpload.type,
+        };
+
+        const storage = getStorage();
+        const storageRef = sRef(storage, "Images/" + ImgName);
+
+        const UploadTask = uploadBytesResumable(storageRef,ImgToUpload,metaData);
+
+        UploadTask.on(
+          "state-changed",
+          (snapshot) => {
+            var progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            proglab.innerHTML = "Uploaded" + " " + progress + " "+ "%";
+          },
+
+          (error) => {
+            alert("Error: Image not uploaded");
+          },
+
+          //() => {
+            //getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+            //  console.log(downloadURL); //This downloadURL can store the download URL to the database(16:00)
+            //}); // As of now, the downloadURl is only getting printed in the console
+         // }
+        );
+      }
+
+      // Upbtn.onclick = UploadProcess;
+      var submitBtn=document.getElementById("submitbtn");
+      submitBtn.addEventListener("click",UploadProcess)
+
+    </script>
+    <!-- <script src="./sellinterface.js"></script> -->
+  </body>
+</html>
+
+</body>
+</html>

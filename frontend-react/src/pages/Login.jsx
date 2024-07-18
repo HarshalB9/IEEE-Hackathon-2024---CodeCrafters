@@ -35,7 +35,7 @@ const Login = () => {
       console.log("User signed up");
       setUser({ loggedIn: true, email: email, user_id : response.data.user_id,name: '' , profileImgae:'' , saved:[] });
       localStorage.setItem("token" , response.data.token);
-      navigate("/")
+      window.location.href = "/"
     }
     else{
       alert("Incorrect data");
@@ -50,9 +50,9 @@ const Login = () => {
       <div id='login'>
         <img src="../../images/login-logo1.png" alt="" id='image-in-login'/>
         <div className='cred'>
-            <input type="email" id='email' onChange={(e)=>setEmail(e.target.value)} placeholder='Email' />
+            <input style={{color : 'black'}} type="email" id='email' onChange={(e)=>setEmail(e.target.value)} placeholder='Email' />
             <br />
-            <input type="password" name='pass' onChange={(e)=>setPassword(e.target.value)} id='password' minLength={8} required placeholder='Password'  />
+            <input type="password" name='pass' style={{color : 'black'}}  onChange={(e)=>setPassword(e.target.value)} id='password' minLength={8} required placeholder='Password'  />
             <div id='forget'>Forget Password?</div>
             <input type="submit" onClick={handleLogin} id='submit' />
             <Link to={"/signup"}>

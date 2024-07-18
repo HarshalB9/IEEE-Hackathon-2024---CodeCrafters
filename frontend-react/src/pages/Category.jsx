@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./Home.css"
+import handleButtonOnClick from '../components/handleButtonOnClick';
 const Category = () => {
   const { category} = useParams();
   const [photos, setPhotos] = useState([]);
@@ -30,7 +31,7 @@ const Category = () => {
               <div className='photo-of-photo-gallery'>
                 <div className='for-overlay-effect'>
                   <img src={photo.photo_url} alt="" />
-                  <button type='button' className='save-button'>save</button>
+                  <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))}>save</button>
                   <div className='photo-overlay'></div>
 
                 </div>

@@ -16,8 +16,12 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="nav-ops">
-          <button type="button" className="btn btn-warning">upload Image</button>
-          <button type="button" className="btn btn-warning">Profile</button>
+          <Link to={"/upload"}>
+            <button type="button" className="btn btn-warning">upload Image</button>
+          </Link>
+          <Link to={"/profile"}>
+            <button type="button" className="btn btn-warning">Profile</button>
+          </Link>
           </div>
       </div>
     )
