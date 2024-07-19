@@ -1,0 +1,120 @@
+
+.k_body {
+    min-height: fit-content;
+    padding: 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.k_wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+.k_wrapper i {
+    height: 50px;
+    width: 50px;
+    font-size: 1.25rem;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.43);
+}
+.k_wrapper i:first-child {
+    left: -24px;
+}
+.k_wrapper i:last-child {
+    right: -20px;
+}
+.k_carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.k_carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.k_carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.k_carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.k_carousel.noTransition {
+    scroll-behavior: auto;
+}
+.k_card {
+    scroll-snap-align: start;
+    padding-bottom: 15px;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.k_card .img {
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #8b53ff;
+}
+.k_card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30 0 5px;
+}
+.k_card span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+    color: #333;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 900px) {
+    .k_carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .k_carousel {
+        grid-auto-columns: 100%;
+    }
+}

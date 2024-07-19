@@ -7,6 +7,7 @@ import Button from '../components/Button'
 import handleButtonOnClick from '../components/handleButtonOnClick'
 import { loggedInSelector } from '../store/user'
 import { useRecoilValue } from 'recoil'
+import Slider from '../components/Slider'
 const Home = () => {
   const [photos, setPhotos] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -37,18 +38,7 @@ const Home = () => {
       <div className="heading-on-homepage">
         <h1>Welcome to Our Photo Gallery</h1>
       </div>
-      <div className="catagory-container">
-        {categories ? categories.map((category, index) => {
-          return (
-            <div className="catagory" onClick={() => {
-              navigate("/category/" + category);
-            }}>
-              <h3>{category}</h3>
-              <div className="overlay"></div>
-            </div>
-          )
-        }) : <></>}
-      </div>
+      <Slider></Slider>
       <div className="h_message"><h4>Explore our Gallery</h4></div>
       <div className='homepage-photo-gallery'>
         <div className='homepage-photo-grid' id='homepage-photo-grid'>

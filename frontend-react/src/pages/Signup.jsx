@@ -51,9 +51,9 @@ const Signup = () => {
       <div id='k_sign-up'>
         <img src="../../images/login-logo1.png" alt="" id='k_logo' />
         <div className='k_cred'>
-          <input type="text" name='' id="k_username"  onChange={(e)=>setName(e.target.value)}  placeholder='Name' /><br />
-          <input type="email" name="" id="k_email" onChange={(e)=>setEmail(e.target.value)} placeholder="Email" /><br />
-          <input type="password" name="pass" id="k_password" onChange={(e)=>setPassword(e.target.value)} minLength={8} required placeholder="Password" />
+          <input type="text" name='' id="k_username" style={{color : "black"}} onChange={(e)=>setName(e.target.value)}  placeholder='Name' /><br />
+          <input type="email" name="" id="k_email" style={{color : "black"}} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" /><br />
+          <input type="password" name="pass" id="k_password" style={{color : "black"}} onChange={(e)=>setPassword(e.target.value)} minLength={8} required placeholder="Password" />
           <input type="submit" onClick={handleSignup} id="k_submit"/>
           <Link to={"/login"}>
             <div id='k_login'>Already have an accuont Click to Login</div>
