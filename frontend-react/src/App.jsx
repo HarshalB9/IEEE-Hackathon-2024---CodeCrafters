@@ -3,7 +3,7 @@ import './App.css'
 import Home from './pages/Home';
 import InitUser from './InitUser';
 import Slider from './components/Slider';
-function App() {
+function  App() {
 
   return (
     <div>

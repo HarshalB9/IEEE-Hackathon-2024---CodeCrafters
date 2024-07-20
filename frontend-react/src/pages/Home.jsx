@@ -35,11 +35,9 @@ const Home = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="heading-on-homepage">
-        <h1>Welcome to Our Photo Gallery</h1>
-      </div>
+      <div class="heading-on-homepage"><h1>Find a category</h1></div>
       <Slider></Slider>
-      <div className="h_message"><h4>Explore our Gallery</h4></div>
+      <div class="h_message"><h4>Explore</h4></div>
       <div className='homepage-photo-gallery'>
         <div className='homepage-photo-grid' id='homepage-photo-grid'>
           {photos ? photos.map((photo) => {
@@ -51,7 +49,7 @@ const Home = () => {
                   <div className='photo-overlay'></div>
 
                 </div>
-                <div className='content'>
+                <div className='description-div'>
                   <h2>{photo.title}</h2>
                   <p>{photo.description}</p>
                   <p id='category'>{photo.category}</p>

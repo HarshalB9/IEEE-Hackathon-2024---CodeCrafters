@@ -25,17 +25,18 @@ const Category = () => {
   return (
     <div>
         <Navbar></Navbar><br /><br /><br />
+        <div className='homepage-photo-gallery'>
         <div className='homepage-photo-grid' id='homepage-photo-grid'>
-        {photos ? photos.map((photo) => {
+          {photos ? photos.map((photo) => {
             return (
               <div className='photo-of-photo-gallery'>
                 <div className='for-overlay-effect'>
                   <img src={photo.photo_url} alt="" />
-                  <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))}>save</button>
+                  <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))} >save</button>
                   <div className='photo-overlay'></div>
 
                 </div>
-                <div className='content'>
+                <div className='description-div'>
                   <h2>{photo.title}</h2>
                   <p>{photo.description}</p>
                   <p id='category'>{photo.category}</p>
@@ -44,6 +45,7 @@ const Category = () => {
             )
           }) : <></>}
         </div>
+      </div>
     </div>
   )
 }

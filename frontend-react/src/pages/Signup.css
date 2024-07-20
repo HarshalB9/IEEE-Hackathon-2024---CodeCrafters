@@ -1,23 +1,24 @@
-.k_signup-page{
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.s_signup-page{
     /* background-color: hsl(0, 0%, 15%); */
     display: flex;
-   
     height: 100vh;
     justify-content: center;
     text-align: center;
     align-items: center;
     /* border: 2px solid black; */
-    border-radius: 25px;    
+    border-radius: 25px;
 }
 
-#k_img-nature{
-    /* border: solid red 20px; */
-    height: 78.7vh;
-    width: 37vw;
+#s_img-nature{
     position: relative;
     background-color: rgba(0, 0, 0, 0.87);
 }
-#k_nature-img{
+#s_nature-img{
     height: 78.7vh;
     width: 37vw;
     background-size: contain;
@@ -25,8 +26,7 @@
     /* opacity: 0.9; */
     
 }
-.k_overlay{
-    /* border: solid red 20px; */
+.s_overlay{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -34,7 +34,7 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.17);
 }
-#k_sign-up{
+#s_sign-up{
     display: flex;
     flex-direction: column; 
     justify-content: center;
@@ -45,7 +45,7 @@
     
 }
 
-#k_logo{
+#s_logo{
     width: 15vw;
     /* height: 15vh; */
     background-size: contain;
@@ -54,14 +54,25 @@
     top: -80px; */
 
 }
-.k_cred{
+.s_cred{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#k_submit{
+input{
+    width: 20vw;
+    font-size: 1.1em;
+    background-color: hsl(0, 0%, 0%);
+    color: azure;
+    border: none;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 10px;
+}
+
+#s_submit{
     margin: 20px;
     width: 10vw;
     background-color: hsl(184, 100%, 45%);
@@ -71,54 +82,59 @@
     text-align: center;
 }
 
-#k_submit:hover{
+#s_submit:hover{
     background-color: hsl(184, 100%, 55%);
 }
 
-#k_submit:active{
+#s_submit:active{
     background-color: hsl(184, 70%, 60%);
     color: hsl(0, 0%, 5%);
 }
 
-#k_login{
+#s_login{
     color: hsl(180, 3%, 85%);
     padding: 10px;
     cursor: pointer;
     font-size: 1.1em;
 }
-#k_login:hover{
+#s_login:hover{
     color: hsl(180, 3%, 99%);
 }
 
 @media screen and (max-width: 950px){
     
-    #k_nature-img{
+    #s_nature-img{
         display: none;
     }
-    #k_sign-up{
+    #s_sign-up{
         width: 60vw;
     }
-    
-    #k_logo{
+    input{
+        width: 40vw;
+        font-size: 1.1em;
+    }
+    #s_logo{
         width: 40vw;
         /* height: 15vw; */
     }
-    #k_submit{
+    #s_submit{
         width: 20vw;
     }
     
 }
 @media screen and (max-width: 600px){
     
-    #k_nature-img{
+    #s_nature-img{
         display: none;
     }
-    #k_sign-up{
+    #s_sign-up{
         width: 70vw;
     }
-   
+    input{
+        width: 55vw;
+    }
 
-    #k_logo{
+    #s_logo{
         width: 35vw;
     }
     

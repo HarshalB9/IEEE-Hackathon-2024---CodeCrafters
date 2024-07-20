@@ -42,19 +42,19 @@ const Login = () => {
     }
   }
   return (
-    <div className='login-page'>
-      <div id='img-nature'>
-        <div className='overlay'></div>
-        <img src="../../images/nature1.jpg" alt="" id='nature-img' />
+    <div className='k_k_login-page'>
+      <div id='k_k_img-nature'>
+        <div className='k_k_overlay'></div>
+        <img src="../../images/nature1.jpg" alt="" id='k_k_nature-img' />
       </div>
-      <div id='login'>
-        <img src="../../images/login-logo1.png" alt="" id='image-in-login'/>
-        <div className='cred'>
-            <input style={{color : 'black'}} type="email" id='email' onChange={(e)=>setEmail(e.target.value)} placeholder='Email' />
+      <div id='k_k_login'>
+        <img src="../../images/login-logo1.png" alt="" id='k_k_logo'/>
+        <div className='k_k_cred'>
+            <input style={{color : 'black'}} type="email" id='k_k_email' onChange={(e)=>setEmail(e.target.value)} placeholder='Email' />
             <br />
-            <input type="password" name='pass' style={{color : 'black'}}  onChange={(e)=>setPassword(e.target.value)} id='password' minLength={8} required placeholder='Password'  />
-            <div id='forget'>Forget Password?</div>
-            <input type="submit" onClick={handleLogin} id='submit' />
+            <input type="password" name='pass' style={{color : 'black'}}  onChange={(e)=>setPassword(e.target.value)} id='k_k_password' minLength={8} required placeholder='Password'  />
+            <div id='k_k_forget'>Forget Password?</div>
+            <input type="submit" onClick={handleLogin} id='k_k_submit' />
             <Link to={"/signup"}>
               <div  id='sign-up'>Don't Have an account Click to Signup</div>
 
