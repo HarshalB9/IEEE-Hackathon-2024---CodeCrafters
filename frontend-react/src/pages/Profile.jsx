@@ -18,7 +18,7 @@ const Profile = () => {
     }
     async function getUploaded(e) {
         e.preventDefault();
-        const response = await axios.get("http://localhost:3000/api/photo/getAllUploadedPhotos", {
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllUploadedPhotos", {
             headers: {
                 "Content-type": "Application/json",
                 "token": localStorage.getItem("token")
@@ -30,7 +30,7 @@ const Profile = () => {
     }
     async function getSaved(e) {
         e.preventDefault();
-        const response = await axios.get("http://localhost:3000/api/photo/getAllSavedPhoto", {
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
             headers: {
                 "Content-type": "Application/json",
                 "token": localStorage.getItem("token")

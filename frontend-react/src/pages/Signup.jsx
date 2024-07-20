@@ -20,7 +20,7 @@ const Signup = () => {
   async function handleSignup(e){
     e.preventDefault();
     
-    const response  = await axios.post('http://localhost:3000/api/user/signup', {
+    const response  = await axios.post('https://ieee-hackathon-2024-codecrafters.onrender.com/api/user/signup', {
       name,
       email,
       password

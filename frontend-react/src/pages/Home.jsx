@@ -15,7 +15,7 @@ const Home = () => {
   const navigate = useNavigate();
   useEffect(() => {
     async function getAllPhotos() {
-      const response = await axios.get("http://localhost:3000/api/photo/getAllPhotosUnprotected");
+      const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllPhotosUnprotected");
       if (response.data.photos) {
         setPhotos(response.data.photos);
       }
@@ -24,7 +24,7 @@ const Home = () => {
   }, [])
   useEffect(() => {
     async function getAllCategories() {
-      const response = await axios.get("http://localhost:3000/api/photo/getAllCategories");
+      const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllCategories");
       if (response.data.categories) {
         setCategories(response.data.categories);
       }

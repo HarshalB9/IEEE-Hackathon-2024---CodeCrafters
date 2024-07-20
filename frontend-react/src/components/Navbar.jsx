@@ -20,10 +20,10 @@ const Navbar = () => {
           </div>
           <div className="nav-ops">
           <Link to={"/upload"}>
-            <button type="button" className="btn btn-warning">upload Image</button>
+            <button type="button" className="btn btn-warning upload" id="homebtn2"  ><span className="first-span">upload </span> <span> Image</span></button>
           </Link>
           <Link to={"/profile"}>
-            <button type="button" className="btn btn-warning">Profile</button>
+            <button type="button" className="btn btn-warning" id="homebtn">Profile</button>
           </Link>
           </div>
       </div>

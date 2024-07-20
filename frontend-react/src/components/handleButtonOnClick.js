@@ -10,7 +10,7 @@ export default async function handleButtonOnClick(photo_id , loggedIn ,token){
     }
     console.log(photo_id);
     console.log(token);
-    const response = await axios.post("http://localhost:3000/api/photo/saveAPhoto",{
+    const response = await axios.post("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/saveAPhoto",{
        
     },{
         headers:{

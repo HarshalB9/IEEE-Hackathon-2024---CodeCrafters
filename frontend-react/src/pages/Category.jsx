@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { loggedInSelector } from '../store/user';
+import { useRecoilValue } from 'recoil';
 import "./Home.css"
 import handleButtonOnClick from '../components/handleButtonOnClick';
 const Category = () => {
   const { category} = useParams();
   const [photos, setPhotos] = useState([]);
+  const loggedIn = useRecoilValue(loggedInSelector);
   useEffect(()=>{
     // getPhotosByCategory
     async function getPhotos(){
-        const response = await axios.get("http://localhost:3000/api/photo/getPhotosByCategory",{
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getPhotosByCategory",{
             headers:{
                 "Content-Type":"application/json",
                 "category" : category

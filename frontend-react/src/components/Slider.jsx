@@ -14,7 +14,7 @@ const Slider = () => {
     useEffect(() => {
         async function getAllCategories() {
             try {
-                const response = await axios.get("http://localhost:3000/api/photo/getAllCategories");
+                const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllCategories");
                 if (response.data.categories) {
                     setCategories(response.data.categories);
                     setIsLoaded(true);

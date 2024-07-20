@@ -11,7 +11,7 @@ const InitUser = () => {
     async function init(){
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://localhost:3000/api/user/me',{
+          const response = await axios.get('https://ieee-hackathon-2024-codecrafters.onrender.com/api/user/me',{
             headers:{
               "Content-type" : "Application/json",
               'token' : token
