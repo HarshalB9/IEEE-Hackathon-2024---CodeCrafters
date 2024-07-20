@@ -69,11 +69,7 @@ const Profile = () => {
                                     <div className='photo-overlay'></div>
 
                                 </div>
-                                <div className='description-div'>
-                                    <h2>{photo.title}</h2>
-                                    <p>{photo.description}</p>
-                                    <p id='category'>{photo.category}</p>
-                                </div>
+                                
                             </div>
                         )
                     }) : <></>}
