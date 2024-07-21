@@ -6,7 +6,8 @@ export default async function handleButtonOnClick(photo_id , loggedIn ,token){
     console.log("handle button clicked");
     if(!loggedIn)
     {
-        window.location.href = "/login";
+        // window.location.href = "/login";
+        alert("please login first")
     }
     console.log(photo_id);
     console.log(token);

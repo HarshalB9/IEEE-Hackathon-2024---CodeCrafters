@@ -7,6 +7,7 @@ import saveAPhoto from "../../contorllers/photos/saveAPhoto.js";
 import getAllSavedPhoto from "../../contorllers/photos/getAllSavedPhoto.js";
 import getPhotosByCategory from "../../contorllers/photos/getPhotosByCategory.js";
 import getAllCategories from "../../contorllers/photos/getAllCategories.js";
+import deletePhoto from "../../contorllers/photos/deleteAPhoto.js";
 const router = Router();
 
 router.get("/photos" , (req ,res)=>{
@@ -20,4 +21,5 @@ router.post("/saveAPhoto" , tokenVerify , saveAPhoto);
 router.get("/getAllSavedPhoto" , tokenVerify , getAllSavedPhoto);
 router.get("/getPhotosByCategory", getPhotosByCategory);
 router.get("/getAllCategories" , getAllCategories);
+router.delete("/deleteAPhoto" , tokenVerify , deletePhoto);
 export default router;
