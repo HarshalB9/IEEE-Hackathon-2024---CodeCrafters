@@ -25,7 +25,7 @@ const Profile = () => {
     async function getUploaded(e) {
         e.preventDefault();
         console.log("gettting uploaded");
-        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllUploadedPhotos", {
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getAllUploadedPhotos", {
             headers: {
                 "Content-type": "Application/json",
                 "token": localStorage.getItem("token")
@@ -39,7 +39,7 @@ const Profile = () => {
     async function getSaved(e) {
         e.preventDefault();
         console.log("getting saved");
-        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getAllSavedPhoto", {
             headers: {
                 "Content-type": "Application/json",
                 "token": localStorage.getItem("token")
@@ -59,7 +59,7 @@ const Profile = () => {
         }
         console.log(photo_id);
         console.log(token);
-        const response = await axios.delete("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/deleteAPhoto",{
+        const response = await axios.delete("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/deleteAPhoto",{
             headers :{
                 "Content-type" : "Application/json",
                 token : token,

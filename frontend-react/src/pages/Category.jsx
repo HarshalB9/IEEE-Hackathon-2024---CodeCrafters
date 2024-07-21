@@ -13,7 +13,7 @@ const Category = () => {
   useEffect(()=>{
     // getPhotosByCategory
     async function getPhotos(){
-        const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getPhotosByCategory",{
+        const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getPhotosByCategory",{
             headers:{
                 "Content-Type":"application/json",
                 "category" : category

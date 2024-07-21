@@ -32,7 +32,7 @@ const UploadImageComponent = () => {
     async function uploadPhoto(){
         if(imageUrl)
         {
-            const response = await axios.post("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/upload-photo",{
+            const response = await axios.post("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/upload-photo",{
                 title: title,
                 description: description,
                 category: category,

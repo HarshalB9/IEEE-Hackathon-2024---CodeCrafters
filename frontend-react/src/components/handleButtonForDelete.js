@@ -11,7 +11,7 @@ export default async function handleButtonOnClickDelete(photo_id , loggedIn ,tok
     }
     console.log(photo_id);
     console.log(token);
-    const response = await axios.delete("http://localhost:3000/api/photo/deleteAPhoto",{
+    const response = await axios.delete("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/deleteAPhoto",{
         headers :{
             "Content-type" : "Application/json",
             token : token,
