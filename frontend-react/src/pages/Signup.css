@@ -17,6 +17,7 @@ body{
 #s_img-nature{
     position: relative;
     background-color: rgba(0, 0, 0, 0.87);
+    border-radius: 15px 0px 0px 15px;
 }
 #s_nature-img{
     height: 78.7vh;
@@ -24,6 +25,7 @@ body{
     background-size: contain;
     /* background-blend-mode: darken; */
     /* opacity: 0.9; */
+    border-radius: 15px 0px 0px 15px;
     
 }
 .s_overlay{
@@ -33,6 +35,7 @@ body{
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.17);
+    border-radius: 15px 0px 0px 15px;
 }
 #s_sign-up{
     display: flex;
@@ -42,7 +45,7 @@ body{
     width: 45vw;
     height: 79vh;
     background-color: hsl(0, 0%, 10%);
-    
+    border-radius: 0px 15px 15px 0px;
 }
 
 #s_logo{
@@ -52,6 +55,7 @@ body{
     margin-bottom: 50px;
     /* position: relative;
     top: -80px; */
+    border-radius: 15px;
 
 }
 .s_cred{
@@ -127,15 +131,36 @@ input{
     #s_nature-img{
         display: none;
     }
+    #s_submit{
+        /* border: 2px solid black; */
+        width: 90px;
+    }
     #s_sign-up{
         width: 70vw;
+        border-radius: 15px;
     }
     input{
         width: 55vw;
     }
-
+    #s_username{
+        width: 220px;
+    }
+    #s_password{
+        width: 220px;
+    }
+    #s_email{
+        width: 220px;
+    }
+   #s_sign-up{
+    width: 280px;
+    height: 450px;
+   }
     #s_logo{
-        width: 35vw;
+        margin-top: 20px;
+        width: 150px;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 15px;
     }
     
 }

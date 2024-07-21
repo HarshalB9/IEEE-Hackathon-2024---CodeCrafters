@@ -55,7 +55,7 @@ const Signup = () => {
           <input type="email" name="" id="s_email" style={{color : "black"}} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" /><br />
           <input type="password" name="pass" id="s_password" style={{color : "black"}} onChange={(e)=>setPassword(e.target.value)} minLength={8} required placeholder="Password" />
           <input type="submit" onClick={handleSignup} id="s_submit"/>
-          <Link to={"/login"}>
+          <Link to={"/login"} style={{ textDecoration: 'none' }}>
             <div id='s_login'>Already have an accuont Click to Login</div>
           </Link>
         </div>

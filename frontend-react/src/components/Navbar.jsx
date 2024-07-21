@@ -19,10 +19,10 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="nav-ops">
-          <Link to={"/upload"}>
-            <button type="button" className="btn btn-warning upload" id="homebtn2"  ><span className="first-span">upload </span> <span> Image</span></button>
+          <Link to={"/upload"} style={{ textDecoration: 'none' }}>
+            <button type="button" className="btn btn-warning upload" id="homebtn2"  ><span className="first-span">Upload </span> <span> Image</span></button>
           </Link>
-          <Link to={"/profile"}>
+          <Link to={"/profile"} style={{ textDecoration: 'none' }}>
             <button type="button" className="btn btn-warning" id="homebtn">Profile</button>
           </Link>
           </div>
@@ -33,14 +33,14 @@ const Navbar = () => {
     return (
       <div className="nav-bar">
           <div className="nav-logo">
-              <img width="200px" src='../../images/PicfinityLogo2.png' alt="logo" />
+              <img width="200px" src='../../images/PicfinityLogo2.png' alt="Logo" />
           </div>
           <div className="nav-ops">
-              <Link to={"/login"}>
-                <button type="button" className="btn btn-warning" id="homebtn">login</button>
+              <Link to={"/login"} style={{ textDecoration: 'none' }}>
+                <button type="button" className="btn btn-warning" id="homebtn">Login</button>
               </Link>
-              <Link to={"/signup"}>
-                <button type="button" className="btn btn-warning" id="homebtn">sign Up</button>
+              <Link to={"/signup"} style={{ textDecoration: 'none' }}>
+                <button type="button" className="btn btn-warning" id="homebtn">Sign Up</button>
               </Link>
           </div>
          

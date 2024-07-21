@@ -45,13 +45,13 @@ const Profile = () => {
             <div id="k_profile-bg">
                 <div id="k_profile-photo">{user.name[0].toUpperCase()}</div>
                 <div id="k_profile-username">@CodeCrafters</div>
-                <p id="k_following-cnt">0 following</p>
-                <div id="k_change">
+                {/* <p id="k_following-cnt">0 following</p> */}
+                {/* <div id="k_change">
                     <button type="button" id="k_share">Share</button>
                     <button type="button" id="k_edit-profile">Edit</button>
-                </div>
+                </div> */}
                 <div id="k_operate">
-                    <a id="k_created" onClick={getUploaded}>Uplaoded Images</a>
+                    <a id="k_created"  onClick={getUploaded}>Uplaoded Images</a>
                     <a href="#" id="k_saved" onClick={getSaved}>Saved</a>
                     <button id="k_profile-logout" type="submit" onClick={handleLogout}>Log out</button>
                 </div>

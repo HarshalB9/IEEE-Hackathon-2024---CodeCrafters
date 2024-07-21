@@ -78,6 +78,9 @@
 #k_profile-logout:hover{
     background: hsl(0, 0%, 78%);
 }
+#k_created{
+    cursor: pointer;
+}
 
 /* here is part of css which is taken from home.css - frontend */
 /* i don't think that much big css is reuired */

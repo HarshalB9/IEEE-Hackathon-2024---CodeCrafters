@@ -16,6 +16,7 @@ body{
 #k_k_img-nature{
     position: relative;
     background-color: rgba(0, 0, 0, 0.87);
+    border-radius: 10px 0 0 10px;
 }
 
 #k_k_nature-img{
@@ -24,6 +25,7 @@ body{
     background-size: contain;
     overflow: hidden;
     z-index: 1;
+    border-radius: 15px 0 0 15px;
 }
 
 .k_k_overlay{
@@ -33,6 +35,7 @@ body{
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.17);
+    border-radius: 15px 0 0 15px;
 }
 
 #k_k_login{
@@ -43,7 +46,9 @@ body{
     width: 45vw;
     height: 79vh;
     background-color: hsl(0, 0%, 10%);
+    /* border: 2px solid black; */
     z-index: 99;
+    border-radius: 0px 15px 15px 0px ;
 }
 
 #k_k_logo{
@@ -51,8 +56,10 @@ body{
     /* height: 15vh; */
     background-size: contain;
     margin-bottom: 50px;
+    border-radius: 15px;
     /* position: relative;
     top: -80px; */
+    /* border: 20px solid black; */
 
 }
 .k_k_cred{
@@ -103,15 +110,19 @@ input{
 }
 
 #k_k_sign-up{
-    color: hsl(180, 3%, 85%);
+    color: hsl(180, 17%, 92%);
     padding: 10px;
     cursor: pointer;
     font-size: 1.1em;
+    text-decoration: none;
+    text-decoration-color: white;
 }
 #k_k_sign-up:hover{
     color: hsl(180, 3%, 99%);
 }
-
+#s_login{
+    text-decoration: none;
+}
 @media screen and (max-width: 1000px){
     
     #k_k_nature-img{
@@ -142,16 +153,44 @@ input{
         display: none;
     }
     #k_k_login{
-        width: 80vw;
+        width:280px;
+        border-radius: 15px;
+        height: 460px;
     }
     input{
-        width: 60vw;
+        width: 200px;
+        /* border: 20px solid white; */
+    }
+    #k_k_forget{
+        width: 100px;
+        margin-left: 0px;
+        /* border: 2px solid black; */
+        padding-right: 30px;
+    }
+    #k_k_submit{
+        width: 120px;
+        border: 2px solid black;
+         
+    }
+    #k_k_email{
+        width: 220px;
+        
+
+    }
+    #s_login{
+        text-decoration: none;
+    }
+    #k_k_password{
+        width: 220px;
     }
     #k_k_forget{
         width: 60vw;
     }
     #k_k_logo{
-        width: 35vw;
+        margin-top: 20px;
+        width: 180px;
+        border-radius: 15px;
+        margin-bottom: 40px;
     }
     
 }

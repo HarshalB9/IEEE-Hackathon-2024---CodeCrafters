@@ -70,13 +70,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0); /* Initial transparency */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.6) 100%);
     transition: background-color 0.3s ease;
     
 }
 
 .catagory:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.3); /* Black with opacity on hover */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.6) 100%); /* Black with opacity on hover */
 }
 
 .save-button {

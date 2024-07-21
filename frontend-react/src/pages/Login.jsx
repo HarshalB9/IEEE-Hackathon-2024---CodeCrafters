@@ -55,8 +55,8 @@ const Login = () => {
             <input type="password" name='pass' style={{color : 'black'}}  onChange={(e)=>setPassword(e.target.value)} id='k_k_password' minLength={8} required placeholder='Password'  />
             <div id='k_k_forget'>Forget Password?</div>
             <input type="submit" onClick={handleLogin} id='k_k_submit' />
-            <Link to={"/signup"}>
-              <div  id='sign-up'>Don't Have an account Click to Signup</div>
+            <Link to={"/signup"} style={{ textDecoration: 'none' }}>
+              <div  id='k_k_sign-up'>Don't Have an account Click to Signup</div>
 
             </Link>
         </div>
