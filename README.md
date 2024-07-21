@@ -1,18 +1,15 @@
 # IEEE-Hackathon-2024--CodeCrafters
-Day 1 - added backend authentication , created the frontend for : Home page , Login and Signup and Upload image.
-Day 2 - added the images/photos related backend , and also have added the home page html.
-
-Sure! Here's a README file for your project:
-
----
 
 # Code Crafters
 
 ## Overview
+Our Team Code Crafters have built a Photo Gallery website , Any one can see the uploaded photos of all users , user can login and then upload new images,
+User can save images of other users , and user can delete his uploaded images
 
-
-
-## Getting Started
+## Technologies 
+Backend - Node.js , Express.js 
+Frontend - HTML , CSS , JS , React JS
+Database - Firebase for the images , Postgres for the Users
 
 ### Installation
 
@@ -20,18 +17,21 @@ Sure! Here's a README file for your project:
 
 1. Navigate to the backend directory:
 
-   bash
+   ```bash
      cd backend
+   ```
 
 2. Install the dependencies:
 
-   bash
+   ```bash
      npm install
+   ```
 
 3. Start the backend server:
 
-   bash
+   ```bash
      node index_real.js
+   ```
 
 #### Frontend
 
