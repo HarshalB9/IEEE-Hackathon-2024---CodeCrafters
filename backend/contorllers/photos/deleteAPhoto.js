@@ -38,6 +38,30 @@ export default async function deletePhoto(req ,res){
                 photoId: photo_id_provided
             }
         });
+        const users = await prisma.user.findMany({
+            where: {
+                saved: {
+                    has: photo_id_provided,
+                },
+            },
+        });
+
+        // For each user, remove the photoId from their saved array
+        const updatePromises = users.map(user =>
+            prisma.user.update({
+                where: {
+                    user_id: user.user_id,
+                },
+                data: {
+                    saved: {
+                        set: user.saved.filter(id => id !== photo_id_provided),
+                    },
+                },
+            })
+        );
+
+        // Execute all update operations
+        await Promise.all(updatePromises);
         return res.json({Api_Response : 321 , message : "The Photo is deleted" , deleted : true});
     } catch (error) {
         console.log(error);

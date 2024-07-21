@@ -7,8 +7,7 @@ import axios from 'axios'
 import Navbar from '../components/Navbar'
 import { loggedInSelector } from '../store/user'
 import { useRecoilValue } from 'recoil'
-import handleButtonOnClickDelete from '../components/handleButtonForDelete'
-import handleButtonOnClick from '../components/handleButtonOnClick'
+
 const Profile = () => {
     const loggedIn = useRecoilValue(loggedInSelector);
     const navigate = useNavigate();
@@ -25,6 +24,7 @@ const Profile = () => {
     }
     async function getUploaded(e) {
         e.preventDefault();
+        console.log("gettting uploaded");
         const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllUploadedPhotos", {
             headers: {
                 "Content-type": "Application/json",
@@ -38,6 +38,7 @@ const Profile = () => {
     }
     async function getSaved(e) {
         e.preventDefault();
+        console.log("getting saved");
         const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
             headers: {
                 "Content-type": "Application/json",
@@ -47,6 +48,34 @@ const Profile = () => {
         if (response.data.photos) {
             setPhotos(response.data.photos);
             setUploaded(false);
+        }
+    }
+    async function handleButtonOnClickDelete(photo_id , loggedIn ,token ){
+        console.log("handle button clicked");
+        if(!loggedIn)
+        {
+            // window.location.href = "/login";
+            alert("please login first")
+        }
+        console.log(photo_id);
+        console.log(token);
+        const response = await axios.delete("http://localhost:3000/api/photo/deleteAPhoto",{
+            headers :{
+                "Content-type" : "Application/json",
+                token : token,
+                "photo_id" : photo_id
+            }
+        })
+        console.log(response.data)
+        if(response.data.deleted)
+        {
+            const updatedPhotos = photos.filter((photo) => photo.photoId !== photo_id);
+            setPhotos(updatedPhotos);
+            setUser(user);
+            alert('Photo deleted');
+        }
+        else{
+            alert("problem")
         }
     }
     return (
@@ -77,7 +106,7 @@ const Profile = () => {
                             <div className='photo-of-photo-gallery'>
                                 <div className='for-overlay-effect'>
                                     <img src={photo.photo_url} alt="" />
-                                    { uploaded ? (<button type='button' className='save-button' onClick={() => handleButtonOnClickDelete(photo.photoId, loggedIn, localStorage.getItem('token'))} >Delete</button>) : <></>}
+                                    { uploaded ? (<button type='button' className='save-button' onClick={() => handleButtonOnClickDelete(photo.photoId, loggedIn, localStorage.getItem('token') )} >Delete</button>) : <></>}
                                     <div className='photo-overlay'></div>
                                 </div>
                                 
