@@ -4,11 +4,17 @@ import { userState } from '../store/user'
 import { useRecoilState } from 'recoil'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import handleButtonOnClick from '../components/handleButtonOnClick'
+import Navbar from '../components/Navbar'
+import { loggedInSelector } from '../store/user'
+import { useRecoilValue } from 'recoil'
+
 const Profile = () => {
+    const loggedIn = useRecoilValue(loggedInSelector);
     const navigate = useNavigate();
     const [user, setUser] = useRecoilState(userState);
     const [photos, setPhotos] = useState([]);
+    const [uploaded , setUploaded] = useState(true);
+    
     console.log(user)
     async function handleLogout(e) {
         e.preventDefault();
@@ -18,6 +24,7 @@ const Profile = () => {
     }
     async function getUploaded(e) {
         e.preventDefault();
+        console.log("gettting uploaded");
         const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllUploadedPhotos", {
             headers: {
                 "Content-type": "Application/json",
@@ -25,11 +32,13 @@ const Profile = () => {
             }
         })
         if (response.data.photos) {
-            setPhotos(response.data.photos)
+            setPhotos(response.data.photos);
+            setUploaded(true);
         }
     }
     async function getSaved(e) {
         e.preventDefault();
+        console.log("getting saved");
         const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
             headers: {
                 "Content-type": "Application/json",
@@ -37,10 +46,42 @@ const Profile = () => {
             }
         })
         if (response.data.photos) {
-            setPhotos(response.data.photos)
+            setPhotos(response.data.photos);
+            setUploaded(false);
+        }
+    }
+    async function handleButtonOnClickDelete(photo_id , loggedIn ,token ){
+        console.log("handle button clicked");
+        if(!loggedIn)
+        {
+            // window.location.href = "/login";
+            alert("please login first")
+        }
+        console.log(photo_id);
+        console.log(token);
+        const response = await axios.delete("http://localhost:3000/api/photo/deleteAPhoto",{
+            headers :{
+                "Content-type" : "Application/json",
+                token : token,
+                "photo_id" : photo_id
+            }
+        })
+        console.log(response.data)
+        if(response.data.deleted)
+        {
+            const updatedPhotos = photos.filter((photo) => photo.photoId !== photo_id);
+            setPhotos(updatedPhotos);
+            setUser(user);
+            alert('Photo deleted');
+        }
+        else{
+            alert("problem")
         }
     }
     return (
+        <>
+        <Navbar></Navbar>
+        <br /><br />
         <div>
             <div id="k_profile-bg">
                 <div id="k_profile-photo">{user.name[0].toUpperCase()}</div>
@@ -65,9 +106,8 @@ const Profile = () => {
                             <div className='photo-of-photo-gallery'>
                                 <div className='for-overlay-effect'>
                                     <img src={photo.photo_url} alt="" />
-                                    <button type='button' className='save-button' onClick={() => handleButtonOnClick(photo.photoId, loggedIn, localStorage.getItem('token'))} >save</button>
+                                    { uploaded ? (<button type='button' className='save-button' onClick={() => handleButtonOnClickDelete(photo.photoId, loggedIn, localStorage.getItem('token') )} >Delete</button>) : <></>}
                                     <div className='photo-overlay'></div>
-
                                 </div>
                                 
                             </div>
@@ -76,6 +116,7 @@ const Profile = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

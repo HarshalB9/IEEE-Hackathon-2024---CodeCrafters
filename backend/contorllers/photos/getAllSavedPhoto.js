@@ -10,11 +10,14 @@ const SECRET = process.env.SECRETS;
 
 
 async function dostuff(saved){
+    console.log(typeof saved)
     const photo = await prisma.photo.findUnique({
         where: {
             photoId: saved
         }
     });
+    console.log("this is the photo");
+    console.log(photo);
     const object = {
         photoId : photo.photoId,
         title : photo.title,
@@ -38,6 +41,7 @@ export default async function getAllSavedPhoto(req ,res){
             return res.json({Api_Response : 316 , message  : "No such User"});
         }
         const savedPhotos = userObject.saved;
+        console.log(savedPhotos);
         let photos = []
         for(var i = 0 ;i < savedPhotos.length ;i++)
         {
