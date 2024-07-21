@@ -59,7 +59,7 @@ const Profile = () => {
         }
         console.log(photo_id);
         console.log(token);
-        const response = await axios.delete("http://localhost:3000/api/photo/deleteAPhoto",{
+        const response = await axios.delete("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/deleteAPhoto",{
             headers :{
                 "Content-type" : "Application/json",
                 token : token,
