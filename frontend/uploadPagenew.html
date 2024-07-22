@@ -1,11 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload an image</title>
-</head>
-<body> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +14,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
     .forms-container {
-      /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+      
       font-family: "Open Sans", sans-serif;
       margin-top: 1rem;
       padding: 0;
@@ -58,15 +51,11 @@
     #form2 {
       display: flex;
       flex-direction: column;
-      /* justify-content: center;
-        align-items: center; */
+   
       width: 40vw;
       height: 70vh;
-      /* margin-top: 150px; */
       background-color: fff;
       padding: 20px;
-      /* border-radius: 8px; */
-      /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     }
     @media (max-width:425px){
       .forms-container{
@@ -88,9 +77,7 @@
     }
     }
     @media(max)
-    /* label { */
-    /* font-weight: 600; */
-    /* } */
+  
     input,
     textarea {
       width: 100%;
@@ -147,21 +134,7 @@
   <div id="uploadimg"><h3>Upload an image</h3></div>
   <div class="forms-container">
   <form action="#" method="post" id="form">
-    <!-- <h2>Enter product details</h2> -->
-    <!-- <label for="title">Title of the product:</label>
-      <input
-        type="text"
-        id="title"
-        name="title"
-        placeholder="E.g. PPS TechKnowledge (First Year) 2022 edition"
-        required
-      /> -->
-    <!-- <label for="price">Price:</label>
-      <input type="number" id="price" name="price" min="0" required /> -->
-    <!-- <label for="description">Description of the product:</label>
-      <textarea id="description" name="description" required></textarea>
-      <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" required /> -->
+   
     <label>Image name</label>
     <input type="text" id="namebox" placeholder="(Autofilled after selecting file)" />
     <label id="extlab"></label> <br /><br />
@@ -169,17 +142,11 @@
     <br />
 
     <button class="imgbtns" id="selbtn">Select Image</button>
-    <!-- <button class="imgbtns" id="upbtn">Upload Image</button>
-      <button class="imgbtns" id="downbtn">Download Image</button> -->
+  
     <br />
     <br />
 
-    <!-- <h2>Enter login credentials</h2>
-      <label for="email">Email-ID</label>
-      <input type="text" id="email" name="email" required />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required /> -->
-
+    
 
   </form>
 
@@ -228,8 +195,7 @@
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    //   const db = getFirestore(app);
-    //   const auth = getAuth(app);
+    
     const storage = getStorage(app);
 
     import {
@@ -243,30 +209,14 @@
     document.getElementById('form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // let title = document.getElementById('title').value;
-      // let price = document.getElementById('price').value;
-      // let description = document.getElementById('description').value;
-      // let contact = document.getElementById('contact').value;
 
       // Upload the image to Firebase Storage
       const imgURL = await uploadImage();
       console.log(imgURL);
 
-      // try {
-      //     await addDoc(collection(db, "users"), {
-      //         // title:title,
-      //         // price:price,
-      //         // description:description,
-      //         // contact:contact,
-      //         // imageURL: imgURL //  new        Store the download URL of the image
-
-      //     });
-      //     alert('Product added successfully!');
-      // } catch (error) {
-      //     console.error("Error adding product: ", error);
-      // }
+      
     });
-    // Function to upload image to Firebase Storage and return download URL
+    //  This function uploads image to Firebase Storage and returns download URL
     async function uploadImage() {
       const file = files[0];
       const storageRef = sRef(storage, 'images/' + file.name);
@@ -352,11 +302,7 @@
           alert("Error: Image not uploaded");
         },
 
-        //() => {
-        //getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
-        //  console.log(downloadURL); //This downloadURL can store the download URL to the database(16:00)
-        //}); // As of now, the downloadURl is only getting printed in the console
-        // }
+        
       );
     }
 
@@ -365,7 +311,7 @@
     submitBtn.addEventListener("click", UploadProcess)
 
   </script>
-  <!-- <script src="./sellinterface.js"></script> -->
+ 
 </body>
 
 </html>
