@@ -43,7 +43,7 @@ const Slider = () => {
                 <ul className="k_carousel">
                     {isLoaded && categories.slice(currentIndex, currentIndex + 3).map((category, index) => (
                         <li className='k_card' key={index} onClick={() => navigate("/category/" + category)}>
-                            <img className="img" src={`../../images/Photos/${category}.jpg`} alt={category} />
+                        {category != "Decor" ? (<img className="img" src={`../../images/Photos/${category}.jpg`} alt={category} />) : (<img className="img" src={`../../images/Photos/decor.jpg`} alt={category} />)}
                             <h2>{category}</h2>
                         </li>
                     ))}
