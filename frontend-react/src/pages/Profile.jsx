@@ -7,6 +7,7 @@ import axios from 'axios'
 import Navbar from '../components/Navbar'
 import { loggedInSelector } from '../store/user'
 import { useRecoilValue } from 'recoil'
+import {useEffect} from 'react';
 
 const Profile = () => {
     const loggedIn = useRecoilValue(loggedInSelector);
@@ -50,12 +51,27 @@ const Profile = () => {
             setUploaded(false);
         }
     }
+    useEffect(()=>{
+        async function dostuff(){
+            const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
+                headers: {
+                    "Content-type": "Application/json",
+                    "token": localStorage.getItem("token")
+                }
+            })
+            if (response.data.photos) {
+                setPhotos(response.data.photos);
+                setUploaded(false);
+            }
+        }
+        dostuff();
+    } , []);
     async function handleButtonOnClickDelete(photo_id , loggedIn ,token ){
         console.log("handle button clicked");
         if(!loggedIn)
         {
             // window.location.href = "/login";
-            alert("please login first")
+            alert("Please login first")
         }
         console.log(photo_id);
         console.log(token);
@@ -85,14 +101,16 @@ const Profile = () => {
         <div>
             <div id="k_profile-bg">
                 <div id="k_profile-photo">{user.name[0].toUpperCase()}</div>
-                <div id="k_profile-username">@CodeCrafters</div>
+                {/* <div id="k_profile-username">@CodeCrafters</div> */}
+                <div id="k_profile-username">{user.name}</div>
+               
                 {/* <p id="k_following-cnt">0 following</p> */}
                 {/* <div id="k_change">
                     <button type="button" id="k_share">Share</button>
                     <button type="button" id="k_edit-profile">Edit</button>
                 </div> */}
                 <div id="k_operate">
-                    <a id="k_created"  onClick={getUploaded}>Uplaoded Images</a>
+                    <a id="k_created"  onClick={getUploaded}>My Uploads</a>
                     <a href="#" id="k_saved" onClick={getSaved}>Saved</a>
                     <button id="k_profile-logout" type="submit" onClick={handleLogout}>Log out</button>
                 </div>

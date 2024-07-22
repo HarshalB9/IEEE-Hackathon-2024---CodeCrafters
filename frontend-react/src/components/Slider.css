@@ -30,6 +30,7 @@
 }
 .k_wrapper i:last-child {
     right: -20px;
+    /* margin-bottom: 50px; */
 }
 .k_carousel {
     display: grid;

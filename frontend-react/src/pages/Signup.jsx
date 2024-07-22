@@ -46,17 +46,19 @@ const Signup = () => {
       <div className='s_signup-page'>
       <div id='s_img-nature'>
         <div className='s_overlay'></div>
-        <img src="../../images/nature1.jpg" alt="" id='s_nature-img'/>
+        {/* <img src="../../images/nature1.jpg" alt="" id='s_nature-img'/> */}
+        <img src="../../images/colorful.png" alt="" id='s_nature-img'/>
       </div>
       <div id='s_sign-up'>
-        <img src="../../images/login-logo1.png" alt="" id='s_logo' />
+        {/* <img src="../../images/login-logo1.png" alt="" id='s_logo' /> */}
+        <img src="../../images/PicfinityLogowhite.png" alt="" id='s_logo' />
         <div className='s_cred'>
           <input type="text" name='' id="s_username" style={{color : "black"}} onChange={(e)=>setName(e.target.value)}  placeholder='Name' /><br />
           <input type="email" name="" id="s_email" style={{color : "black"}} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" /><br />
           <input type="password" name="pass" id="s_password" style={{color : "black"}} onChange={(e)=>setPassword(e.target.value)} minLength={8} required placeholder="Password" />
           <input type="submit" onClick={handleSignup} id="s_submit"/>
           <Link to={"/login"} style={{ textDecoration: 'none' }}>
-            <div id='s_login'>Already have an accuont Click to Login</div>
+            <div id='s_login'>Already have an accuont? Click to Login</div>
           </Link>
         </div>
       </div>

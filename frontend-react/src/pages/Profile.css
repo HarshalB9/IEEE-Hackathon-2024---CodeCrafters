@@ -19,7 +19,8 @@
     align-items: center;
     margin: 5vh 0vh 2vh 0;
     border: 2px solid rebeccapurple;
-    background: rgba(197, 130, 28, 0.598);
+    /* background: rgba(197, 130, 28, 0.598); */
+    background: #FFCA2C;
     height: 137px;
     width: 137px;
     border-radius: 50%;
@@ -68,7 +69,8 @@
     border-radius: 4px;
 }
 #k_profile-logout{
-    background-color: rgba(197, 130, 28, 0.598);;
+    /* background-color: rgba(197, 130, 28, 0.598);; */
+    background-color: #FFCA2C;
     margin: 10px;
     padding: 5px 10px;
     font-size: 1.2rem;
