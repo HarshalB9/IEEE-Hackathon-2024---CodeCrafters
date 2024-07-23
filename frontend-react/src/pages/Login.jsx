@@ -39,7 +39,7 @@ const Login = () => {
       window.location.href = "/"
     }
     else{
-      alert("Incorrect data");
+      alert(response.data.message);
     }
   }
   return (
