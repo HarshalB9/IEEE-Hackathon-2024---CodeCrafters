@@ -6,6 +6,7 @@ import Signup from './Signup';
 import Category from './Category';
 import Upload from './Upload';
 import Profile from './Profile';
+import Photo from './Photo';
 const Dashboard = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Dashboard = () => {
         <Route path="/category/:category" element={<Category />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/photo/:photoId" element={<Photo />} />
       </Routes>
     </div>
   )

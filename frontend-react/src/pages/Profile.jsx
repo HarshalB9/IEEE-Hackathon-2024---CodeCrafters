@@ -126,7 +126,7 @@ const Profile = () => {
                                 <div className='for-overlay-effect'>
                                     <img src={photo.photo_url} alt="" />
                                     { uploaded ? (<button type='button' className='save-button' onClick={() => handleButtonOnClickDelete(photo.photoId, loggedIn, localStorage.getItem('token') )} >Delete</button>) : <></>}
-                                    <div className='photo-overlay'></div>
+                                    <Link to={`/photo/${photo.photoId}`}><div className='photo-overlay'></div></Link>
                                 </div>
                                 
                             </div>

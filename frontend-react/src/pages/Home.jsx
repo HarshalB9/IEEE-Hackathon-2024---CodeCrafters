@@ -6,22 +6,30 @@ import { useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import handleButtonOnClick from '../components/handleButtonOnClick'
 import { loggedInSelector } from '../store/user'
-import { useRecoilValue } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import Slider from '../components/Slider'
+import { photoState } from '../store/photo'
+import { Link } from 'react-router-dom'
 const Home = () => {
   const [photos, setPhotos] = useState([]);
   const [categories, setCategories] = useState([]);
   const loggedIn = useRecoilValue(loggedInSelector);
   const navigate = useNavigate();
+  const photoS = useRecoilValue(photoState);
+  const setPhotoS = useSetRecoilState(photoState)
   useEffect(() => {
     async function getAllPhotos() {
       const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getAllPhotosUnprotected");
       if (response.data.photos) {
         setPhotos(response.data.photos);
+        
       }
     }
     getAllPhotos();
   }, [])
+  useEffect(()=>{
+    setPhotoS(photos);
+  } , [photos])
   useEffect(() => {
     async function getAllCategories() {
       const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getAllCategories");
@@ -43,12 +51,13 @@ const Home = () => {
           {photos ? photos.map((photo) => {
             return (
               <div className='photo-of-photo-gallery'>
+                
                 <div className='for-overlay-effect'>
-                  <img src={photo.photo_url} alt="" />
+                  <img src={photo.photo_url} alt=""/>
                   <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))} >save</button>
-                  <div className='photo-overlay'></div>
-
+                  <Link to={`/photo/${photo.photoId}`}><div className='photo-overlay'></div></Link>
                 </div>
+
                
               </div>
             )
