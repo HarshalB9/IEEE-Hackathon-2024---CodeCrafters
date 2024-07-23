@@ -98,10 +98,10 @@ const UploadImageComponent = () => {
         <label>Image name</label>
         <input type="text" id="h_namebox" value={imgName} readOnly placeholder="(Autofilled after selecting file)" />
         <label id="h_extlab">{imgExt}</label>
-        <br /><br />
+        <br />
         {imgPreview && <img id="h_myimg" src={imgPreview} alt="Selected"  />}
         <label id="h_upprogress">{`Uploaded ${progress} %`}</label>
-        <br /><br />
+        <br />
         <button type="button" className="h_imgbtns" onClick={() => document.getElementById('h_fileInput').click()}>Select Image</button>
         <br /><br />
         <input type="file" id="h_fileInput" style={{ display: 'none' }} onChange={handleFileChange} />

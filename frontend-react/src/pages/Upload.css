@@ -52,8 +52,10 @@
     height: 100px;
   }
   .h_body img {
-    height: 60vh;
+    height: 30vh;
+    /* height: 200px; */
     width: 20vw;
+    /* width: 200px; */
     border: 2px solid gray;
     border-radius: 0.8rem;
   }
