@@ -21,7 +21,12 @@ export default async function handleButtonOnClick(photo_id , loggedIn ,token){
         }
     });
     console.log(response.data)
-    if(response.data.saved)
+    
+    if(response.data.Api_Response==323)
+    {
+        alert("photo is already saved");
+    }
+    else if(response.data.saved)
     {
         alert("photo saved")
     }

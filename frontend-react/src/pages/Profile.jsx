@@ -53,6 +53,7 @@ const Profile = () => {
     }
     useEffect(()=>{
         async function dostuff(){
+            console.log("saved images")
             const response = await axios.get("https://ieee-hackathon-2024-codecrafters.onrender.com/api/photo/getAllSavedPhoto", {
                 headers: {
                     "Content-type": "Application/json",
