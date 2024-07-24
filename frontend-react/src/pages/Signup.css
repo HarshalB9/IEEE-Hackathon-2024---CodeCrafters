@@ -40,10 +40,10 @@ body{
 #s_sign-up{
     display: flex;
     flex-direction: column; 
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 45vw;
-    height: 79vh;
+    height: 78.8vh;
     background-color: hsl(0, 0%, 10%);
     border-radius: 0px 15px 15px 0px;
 }
@@ -52,7 +52,9 @@ body{
     width: 15vw;
     /* height: 15vh; */
     background-size: contain;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
     /* position: relative;
     top: -80px; */
     border-radius: 15px;
@@ -112,6 +114,8 @@ input{
     }
     #s_sign-up{
         width: 60vw;
+        border-radius: 15px;
+        
     }
     input{
         width: 40vw;
@@ -120,6 +124,9 @@ input{
     #s_logo{
         width: 40vw;
         /* height: 15vw; */
+        height: 33vh;
+        margin: 0;
+
     }
     #s_submit{
         width: 20vw;
@@ -136,7 +143,9 @@ input{
         width: 90px;
     }
     #s_sign-up{
-        width: 70vw;
+        /* width: 70vw; */
+        width:280px;
+        height: 460px;
         border-radius: 15px;
     }
     input{
@@ -151,15 +160,12 @@ input{
     #s_email{
         width: 220px;
     }
-   #s_sign-up{
-    width: 280px;
-    height: 450px;
-   }
     #s_logo{
-        margin-top: 20px;
+        /* margin-top: 20px; */
         width: 150px;
-        height: 100px;
-        margin-bottom: 20px;
+        height: 150px;
+        margin: 0;
+        /* margin-bottom: 20px; */
         border-radius: 15px;
     }
     
