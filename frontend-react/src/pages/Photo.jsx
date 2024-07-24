@@ -6,6 +6,8 @@ import { loggedInSelector } from '../store/user';
 import { useRecoilValue } from 'recoil';
 import handleButtonOnClick from '../components/handleButtonOnClick';
 import { useNavigate } from 'react-router-dom';
+import "./Photo.css";
+import Navbar from "../components/Navbar"
 const Photo = () => {
     const navigate = useNavigate();
     const { photoId } = useParams();
@@ -26,18 +28,19 @@ const Photo = () => {
     }, [photoId, photoS])
     return (
         <div className=''>
+            <Navbar></Navbar>
             {ourPhoto ? (
-                <div className=''>
+                <div className='hero-class'>
 
-                    <div className='for-overlay-effect'>
+                    <div className='imgchadiv'>
                         <img src={ourPhoto.photo_url} alt="" />
-                        <button type='button' className='save-button' onClick={() => handleButtonOnClick(ourPhoto.photoId, loggedIn, localStorage.getItem('token'))} >save</button>
-                        <div className='photo-overlay'></div>
+                        
+                        {/* <div className='photo-overlay'></div> */}
                     </div>
-                    <div>
-                        <h1>{ourPhoto.title}</h1>
-                        <p>{ourPhoto.description}</p>
-                        <p>{ourPhoto.category}</p>
+                    <div className='descchadiv'>
+                        <div><h1>{ourPhoto.title}</h1></div>
+                        <div><p>{"Description: " + ourPhoto.description}</p></div>
+                        <div><p>{"Category: " + ourPhoto.category}</p></div>
                     </div>
                 </div>
             ) : <div>hithere</div>}
