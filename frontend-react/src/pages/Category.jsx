@@ -6,6 +6,7 @@ import { loggedInSelector } from '../store/user';
 import { useRecoilValue } from 'recoil';
 import "./Home.css"
 import handleButtonOnClick from '../components/handleButtonOnClick';
+import { Link } from 'react-router-dom';
 const Category = () => {
   const { category} = useParams();
   const [photos, setPhotos] = useState([]);
@@ -36,7 +37,7 @@ const Category = () => {
                 <div className='for-overlay-effect'>
                   <img src={photo.photo_url} alt="" />
                   <button type='button' className='save-button' onClick={()=>handleButtonOnClick(photo.photoId , loggedIn , localStorage.getItem('token'))} >save</button>
-                  <div className='photo-overlay'></div>
+                  <Link to={`/photo/${photo.photoId}`}><div className='photo-overlay'></div></Link>
 
                 </div>
                
