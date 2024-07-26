@@ -21,7 +21,13 @@ const Home = () => {
     async function getAllPhotos() {
       const response = await axios.get("https://ieee-hackathon-2024-codecrafters-1.onrender.com/api/photo/getAllPhotosUnprotected");
       if (response.data.photos) {
-        setPhotos(response.data.photos);
+        const ph = response.data.photos;
+        let p= [];
+        for(var i = response.data.photos.length -1 ;i>=0;i--)
+        {
+          p.push(ph[i]);
+        }
+        setPhotos(p);
         
       }
     }

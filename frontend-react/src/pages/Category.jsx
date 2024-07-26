@@ -21,7 +21,13 @@ const Category = () => {
             }
         });
         if(response.data.photos){
-            setPhotos(response.data.photos);
+            const ph = response.data.photos;
+            let p= [];
+            for(var i = response.data.photos.length -1 ;i>=0;i--)
+            {
+              p.push(ph[i]);
+            }
+            setPhotos(p);
         }
     }
     getPhotos();
